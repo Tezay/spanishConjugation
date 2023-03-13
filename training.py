@@ -51,10 +51,10 @@ def verification(response, verb, time, pronouns):
     
     if response == verb[:-2] + conjugaisons[indice1][indice2][int(personnes.index(pronouns))]:
         
-        print("Bonne réponse !")
+        print("✅")
         
     else:
-        print("\nMauvaise réponse. La réponse était : ", verb[:-2] + conjugaisons[indice1][indice2][int(personnes.index(pronouns))])
+        print("\n❌ Answer was: ", verb[:-2] + conjugaisons[indice1][indice2][int(personnes.index(pronouns))])
 
 
 def traning():
