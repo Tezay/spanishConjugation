@@ -3,7 +3,7 @@ import random
 
 personnes = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
 
-def choixVerbe():
+def verbChoice():
     
     with open('spanishVerbsList.csv', newline='') as csvfile:
         reader = csv.reader(csvfile)
@@ -13,7 +13,7 @@ def choixVerbe():
         return random_verbe
   
 
-def saisie(verbe, temps, personne):
+def userInput(verbe, temps, personne):
     
     rep = input(f"[{temps}] [{personne}] {verbe} :")
 
@@ -58,8 +58,8 @@ def entrainement():
         temps = random.choice(temp)
         personne = random.choice(personnes)
         
-        verbe = choixVerbe()
-        rep = saisie(verbe, temps, personne)
+        verbe = verbChoice()
+        rep = userInput(verbe, temps, personne)
         verif(rep, verbe, temps, personne)
         
 entrainement()    
