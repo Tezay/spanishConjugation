@@ -22,16 +22,18 @@ def verification(response, verb, time, pronouns):
     
     termination = str(verb[-2:])
     
-    if termination == "ar" :
-        indice2 = 0
-    
-    elif termination == "er":
-        indice2 = 1
-        
-    else:
-        indice2 = 2
-     
-        
+    correspondanceTermination = ["ar","er","ir"]
+
+    correspondanceTime = {
+        "Conditional": Conditional(),
+        "Futuro": Futuro(),
+        "Presente de indicativo": Presente_de_indicativo(),
+        "Presente de subjonctivo": Presente_de_subjonctivo(),
+        "Pretérito imperfecto de indicativo": Preterito_imperfecto_de_indicativo(),
+        "Pretérito indefinido": Preterito_indefinido(),
+        "Prétero imperfecto de subjonctivo": Pretero_imperfecto_de_subjonctivo(),
+    }
+
     if time == "Imparfait":
         indice1 = 0
         
