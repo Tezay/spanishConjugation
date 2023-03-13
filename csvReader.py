@@ -70,7 +70,4 @@ def Conditional():
         reader = csv.reader(csvfile, delimiter=';')
         rows = [row for row in reader]
         
-        return rows
-
-print(Futuro())    
-    
+        return rows   
