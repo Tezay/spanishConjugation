@@ -38,8 +38,7 @@ def TimesChoice():
     
     while timesQuestion == "       " or len(timesQuestion) > 7 or not(timesQuestion[lQ2-1] in nbr) or not(timesQuestion[lQ2-2] in nbr) or not(timesQuestion[lQ2-3] in nbr) or not(timesQuestion[lQ2-4] in nbr) or not(timesQuestion[lQ2-5] in nbr) or not(timesQuestion[lQ2-6] in nbr) or not(timesQuestion[lQ2-7] in nbr):
         
-    
-            timesQuestion = input("Choisir les temps à réviser parmis la liste suivante : \n[1] Conditional \n[2] Futuro\n[3] Presente de indicativo \n[4] Presente de subjonctivo \n[5] Pretérito imperfecto de indicativo \n[6] Pretérito indefinido \n[7] Prétero imperfecto de subjonctivo    :")
+            timesQuestion = input("Choose time(s) to revise among the following list: \n[1] Conditional \n[2] Futuro\n[3] Presente de indicativo \n[4] Presente de subjonctivo \n[5] Pretérito imperfecto de indicativo \n[6] Pretérito indefinido \n[7] Prétero imperfecto de subjonctivo    :")
     
     for i in range(lQ1):
         
@@ -54,7 +53,7 @@ def userInput(verb, time, pronouns):
 
     return response
 
-def verification(response, verb, time, pronouns): #time = "Conditional" (par exemple)
+def verification(response, verb, time, pronouns):
     
     termination = str(verb[-2:])
     
@@ -72,15 +71,11 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
         print("\n❌ Answer was: ", verb[:-2] + correction)
 
 def traning():
-    
-    print("Choose time(s) you want to revise among the following list:")
-    
-    #Afficher liste verbes
 
+    listActiveTimes = TimesChoice()
     print("Done! You can stop at any moment the program with the keyword 'stop'")
 
     response = ""
-    listActiveTimes = TimesChoice()
 
     while response != "stop" :
                 
