@@ -1,7 +1,8 @@
 import csv
 import random
+import os
 
-personnes = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
+pronouns = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
 
 def verbChoice():
     
@@ -11,55 +12,61 @@ def verbChoice():
         random_verbe = random.choice(rows)[0]
         
         return random_verbe
-  
 
-def userInput(verbe, temps, personne):
+
+def verbConjugation(verb, time, pronouns, termination):
+
     
-    rep = input(f"[{temps}] [{personne}] {verbe} :")
 
-    return rep
-
-
-
-def verif(rep, verbe, temps, personne):
     
-    terminaison = str(verbe[-2:])
+
+def userInput(verb, time, pronouns):
     
-    if terminaison == "ar" :
+    response = input(f"[{time}] [{pronouns}] {verb} :")
+
+    return response
+
+
+
+def verification(response, verb, time, pronouns):
+    
+    termination = str(verb[-2:])
+    
+    if termination == "ar" :
         indice2 = 0
     
-    elif terminaison == "er":
+    elif termination == "er":
         indice2 = 1
         
     else:
         indice2 = 2
      
         
-    if temps == "Imparfait":
+    if time == "Imparfait":
         indice1 = 0
         
     else:
         indice1 = 1
         
     
-    if rep == verbe[:-2] + conjugaisons[indice1][indice2][int(personnes.index(personne))]:
+    if response == verb[:-2] + conjugaisons[indice1][indice2][int(personnes.index(pronouns))]:
         
         print("Bonne réponse !")
         
     else:
-        print("\nMauvaise réponse. La réponse était : ", verbe[:-2] + conjugaisons[indice1][indice2][int(personnes.index(personne))])
+        print("\nMauvaise réponse. La réponse était : ", verb[:-2] + conjugaisons[indice1][indice2][int(personnes.index(pronouns))])
 
-def entrainement():
+def traning():
     
-    rep = ""
+    response = ""
     
-    while rep != "stop" :
+    while response != "stop" :
         
-        temps = random.choice(temp)
-        personne = random.choice(personnes)
+        time = random.choice(temp)
+        pronouns = random.choice(personnes)
         
-        verbe = verbChoice()
-        rep = userInput(verbe, temps, personne)
-        verif(rep, verbe, temps, personne)
+        verb = verbChoice()
+        response = userInput(verb, time, pronouns)
+        verification(response, verb, time, pronouns)
         
-entrainement()    
+traning()
