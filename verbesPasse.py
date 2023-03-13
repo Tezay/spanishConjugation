@@ -1,23 +1,11 @@
 import csv
 import random
 
-temp = ["Imparfait", "Passé simple"]
-    
-conjugaisons = [
-    ["aba","abas","aba","ábamos","abais","aban"],
-    ["ía","ías","ía","íamos","íais","ían"],
-    ["ía","ías","ía","íamos","íais","ían"]
-    ],[
-       ["é","aste","ó","amos","asteis","aron"],
-       ["í","iste","ió","imos","isteis","ieron"],
-       ["í","iste","ió","imos","isteis","ieron"]
-       ]
-
 personnes = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
 
 def choixVerbe():
     
-    with open('data.csv', newline='') as csvfile:
+    with open('spanishVerbsList.csv', newline='') as csvfile:
         reader = csv.reader(csvfile)
         rows = [row for row in reader]
         random_verbe = random.choice(rows)[0]
