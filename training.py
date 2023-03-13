@@ -17,7 +17,9 @@ correspondanceTime = {
 
 def TimesChoice():
     
-    nbr = ["1", "2", "3", "4", "5", "6", "7"] 
+    listActiveTimes = []
+    
+    nbr = ["1", "2", "3", "4", "5", "6", "7", " "] 
        
     listTimes = ["Conditional",
          "Futuro",
@@ -27,23 +29,22 @@ def TimesChoice():
          "Pretérito indefinido",
          "Prétero imperfecto de subjonctivo"]
     
-    timesQuestion = input(
-        "Choisir les temps à réviser parmis la liste suivante :
-        \n[1] Conditional
-        \n[2] Futuro
-        \n[3] Presente de indicativo
-        \n[4] Presente de subjonctivo
-        \n[5] Pretérito imperfecto de indicativo
-        \n[6] Pretérito indefinido
-        \n[7] Prétero imperfecto de subjonctivo    :"
-    )
-        
-    for i in range(len(timesQuestion))
-            
-       if timesQuestion[i] in nbr:
-            
-                listActiveTimes.append(listTimes[int(timesquestion[i])-1])
+    timesQuestion = input("Choisir les temps à réviser parmis la liste suivante : \n[1] Conditional \n[2] Futuro\n[3] Presente de indicativo \n[4] Presente de subjonctivo \n[5] Pretérito imperfecto de indicativo \n[6] Pretérito indefinido \n[7] Prétero imperfecto de subjonctivo    :")
+     
+    lQ1 = len(timesQuestion)
+    dif = 7-len(timesQuestion)
+    timesQuestion+= dif * " "
+    lQ2 = len(timesQuestion) 
     
+    while timesQuestion == "       " or len(timesQuestion) > 7 or not(timesQuestion[lQ2-1] in nbr) or not(timesQuestion[lQ2-2] in nbr) or not(timesQuestion[lQ2-3] in nbr) or not(timesQuestion[lQ2-4] in nbr) or not(timesQuestion[lQ2-5] in nbr) or not(timesQuestion[lQ2-6] in nbr) or not(timesQuestion[lQ2-7] in nbr):
+        
+    
+            timesQuestion = input("Choisir les temps à réviser parmis la liste suivante : \n[1] Conditional \n[2] Futuro\n[3] Presente de indicativo \n[4] Presente de subjonctivo \n[5] Pretérito imperfecto de indicativo \n[6] Pretérito indefinido \n[7] Prétero imperfecto de subjonctivo    :")
+    
+    for i in range(lQ1):
+        
+        listActiveTimes.append(listTimes[int(timesQuestion[i])-1])
+            
     return listActiveTimes
 
 
@@ -61,10 +62,10 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
     
     correction = correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(termination)]
     
-    if (response == verb[:-2] + correction and time != "Futuro" and time != "Conditional") or ((time == "Futuro" or time == "Conditional") and response == verb + correction)):
+    if (response == verb[:-2] + correction and time != "Futuro" and time != "Conditional") or ((time == "Futuro" or time == "Conditional") and response == verb + correction):
         print("✅")
     
-    elif (time == "Futuro" or time == "Conditional") and response != verb + correction):
+    elif (time == "Futuro" or time == "Conditional") and response != verb + correction:
         print("\n❌ Answer was: ", verb + correction)
         
     else:
