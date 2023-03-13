@@ -3,6 +3,43 @@ import csvReader
 
 listPronouns = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
 
+correspondanceTime = {
+        "Conditional": csvReader.Conditional,
+        "Futuro": csvReader.Futuro,
+        "Presente de indicativo": csvReader.Presente_de_indicativo,
+        "Presente de subjonctivo": csvReader.Presente_de_subjonctivo,
+        "Pretérito imperfecto de indicativo": csvReader.Preterito_imperfecto_de_indicativo,
+        "Pretérito indefinido": csvReader.Preterito_indefinido,
+        "Prétero imperfecto de subjonctivo": csvReader.Pretero_imperfecto_de_subjonctivo,
+    }
+
+
+
+def TimesChoice():
+    
+    listTimes = ["Conditional",
+         "Futuro",
+         "Presente de indicativo",
+         "Presente de subjonctivo",
+         "Pretérito imperfecto de indicativo",
+         "Pretérito indefinido",
+         "Prétero imperfecto de subjonctivo"]
+    
+    timesQuestion = input(
+        "Choisir les temps à réviser parmis la liste suivante :
+        \n[1] Conditional
+        \n[2] Futuro
+        \n[3] Presente de indicativo
+        \n[4] Presente de subjonctivo
+        \n[5] Pretérito imperfecto de indicativo
+        \n[6] Pretérito indefinido
+        \n[7] Prétero imperfecto de subjonctivo    :"
+    )
+    
+    for i in range(len(
+    listActiveTimes.append(listTimes[timesquestion[i]-1])
+    
+    
 def userInput(verb, time, pronouns):
     
     response = input(f"[{time}] [{pronouns}] {verb} :")
@@ -14,16 +51,6 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
     termination = str(verb[-2:])
     
     correspondanceTermination = ["ar","er","ir"]
-
-    correspondanceTime = {
-        "Conditional": csvReader.Conditional,
-        "Futuro": csvReader.Futuro,
-        "Presente de indicativo": csvReader.Presente_de_indicativo,
-        "Presente de subjonctivo": csvReader.Presente_de_subjonctivo,
-        "Pretérito imperfecto de indicativo": csvReader.Preterito_imperfecto_de_indicativo,
-        "Pretérito indefinido": csvReader.Preterito_indefinido,
-        "Prétero imperfecto de subjonctivo": csvReader.Pretero_imperfecto_de_subjonctivo,
-    }
     
     correction = correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(termination)]
     
@@ -35,8 +62,6 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
         
     else:
         print("\n❌ Answer was: ", verb[:-2] + correction)
-
-def sai
 
 def traning():
     
@@ -50,7 +75,7 @@ def traning():
     
     while response != "stop" :
         
-        time = random.choice(list_times)
+        time = random.choice(listActiveTimes)
         pronouns = random.choice(listPronouns)
         
         verb = csvReader.verbChoice()
