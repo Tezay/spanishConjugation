@@ -36,7 +36,7 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
     else:
         print("\n❌ Answer was: ", verb[:-2] + correction)
 
-
+def sai
 
 def traning():
     
@@ -50,7 +50,7 @@ def traning():
     
     while response != "stop" :
         
-        time = "Futuro"
+        time = random.choice(list_times)
         pronouns = random.choice(listPronouns)
         
         verb = csvReader.verbChoice()
