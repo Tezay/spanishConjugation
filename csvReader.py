@@ -1,4 +1,4 @@
-from random import*
+import random
 import csv
 
 

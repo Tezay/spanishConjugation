@@ -9,8 +9,6 @@ def userInput(verb, time, pronouns):
 
     return response
 
-
-
 def verification(response, verb, time, pronouns): #time = "Conditional" (par exemple)
     
     termination = str(verb[-2:])
@@ -18,20 +16,20 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
     correspondanceTermination = ["ar","er","ir"]
 
     correspondanceTime = {
-        "Conditional": Conditional,
-        "Futuro": Futuro,
-        "Presente de indicativo": Presente_de_indicativo,
-        "Presente de subjonctivo": Presente_de_subjonctivo,
-        "Pretérito imperfecto de indicativo": Preterito_imperfecto_de_indicativo,
-        "Pretérito indefinido": Preterito_indefinido,
-        "Prétero imperfecto de subjonctivo": Pretero_imperfecto_de_subjonctivo,
+        "Conditional": csvReader.Conditional,
+        "Futuro": csvReader.Futuro,
+        "Presente de indicativo": csvReader.Presente_de_indicativo,
+        "Presente de subjonctivo": csvReader.Presente_de_subjonctivo,
+        "Pretérito imperfecto de indicativo": csvReader.Preterito_imperfecto_de_indicativo,
+        "Pretérito indefinido": csvReader.Preterito_indefinido,
+        "Prétero imperfecto de subjonctivo": csvReader.Pretero_imperfecto_de_subjonctivo,
     }
 
-    if response == verb[:-2] + csvReader.correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(terminaisons)]:
+    if response == verb[:-2] + correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(termination)]:
         print("✅")
         
     else:
-        print("\n❌ Answer was: ", verb[:-2] + csvReader.correspondanceTime[time]()[indice1][indice2][int(personnes.index(pronouns))])
+        print("\n❌ Answer was: ", verb[:-2] + correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(termination)])
 
 
 
