@@ -17,6 +17,8 @@ correspondanceTime = {
 
 def TimesChoice():
     
+    nbr = ["1", "2", "3", "4", "5", "6", "7"] 
+       
     listTimes = ["Conditional",
          "Futuro",
          "Presente de indicativo",
@@ -35,11 +37,16 @@ def TimesChoice():
         \n[6] Pretérito indefinido
         \n[7] Prétero imperfecto de subjonctivo    :"
     )
+        
+    for i in range(len(timesQuestion))
+            
+       if timesQuestion[i] in nbr:
+            
+                listActiveTimes.append(listTimes[int(timesquestion[i])-1])
     
-    for i in range(len(
-    listActiveTimes.append(listTimes[timesquestion[i]-1])
-    
-    
+    return listActiveTimes
+
+
 def userInput(verb, time, pronouns):
     
     response = input(f"[{time}] [{pronouns}] {verb} :")
@@ -72,9 +79,10 @@ def traning():
     print("Done! You can stop at any moment the program with the keyword 'stop'")
 
     response = ""
-    
+    listActiveTimes = TimesChoice()
+
     while response != "stop" :
-        
+                
         time = random.choice(listActiveTimes)
         pronouns = random.choice(listPronouns)
         
