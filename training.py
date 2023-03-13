@@ -24,12 +24,13 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
         "Pretérito indefinido": csvReader.Preterito_indefinido,
         "Prétero imperfecto de subjonctivo": csvReader.Pretero_imperfecto_de_subjonctivo,
     }
-
-    if response == verb[:-2] + correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(termination)]:
+    
+    correction = correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(termination)]
+    if response == verb[:-2] + correction:
         print("✅")
         
     else:
-        print("\n❌ Answer was: ", verb[:-2] + correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(termination)])
+        print("\n❌ Answer was: ", verb[:-2] + correction)
 
 
 
