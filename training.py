@@ -1,6 +1,6 @@
 import csv
 import random
-import os
+import csvReader
 
 pronouns = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
 
@@ -55,6 +55,7 @@ def verification(response, verb, time, pronouns):
         
     else:
         print("\nMauvaise réponse. La réponse était : ", verb[:-2] + conjugaisons[indice1][indice2][int(personnes.index(pronouns))])
+
 
 def traning():
     
