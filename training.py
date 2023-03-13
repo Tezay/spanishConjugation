@@ -2,7 +2,7 @@ import csv
 import random
 
 personnes = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
-banane
+test
 def choixVerbe():
     
     with open('spanishVerbsList.csv', newline='') as csvfile:
