@@ -3,13 +3,6 @@ import csvReader
 
 listPronouns = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
 
-
-list = []
-
-
-
-
-
 def userInput(verb, time, pronouns):
     
     response = input(f"[{time}] [{pronouns}] {verb} :")
@@ -34,9 +27,6 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
         "Prétero imperfecto de subjonctivo": Pretero_imperfecto_de_subjonctivo,
     }
 
-
-        
-    
     if response == verb[:-2] + csvReader.correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(terminaisons)]:
         print("✅")
         
@@ -57,8 +47,8 @@ def traning():
     
     while response != "stop" :
         
-        time = random.choice(temp)
-        pronouns = random.choice(personnes)
+        time = "Futuro"
+        pronouns = random.choice(listPronouns)
         
         verb = csvReader.verbChoice()
         response = userInput(verb, time, pronouns)
