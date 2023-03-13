@@ -1,24 +1,14 @@
-import csv
 import random
 import csvReader
 
 pronouns = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
 
-def verbChoice():
-    
-    with open('spanishVerbsList.csv', newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        rows = [row for row in reader]
-        random_verbe = random.choice(rows)[0]
-        
-        return random_verbe
+
+list = []
 
 
-def verbConjugation(verb, time, pronouns, termination):
 
-    
 
-    
 
 def userInput(verb, time, pronouns):
     
@@ -49,12 +39,12 @@ def verification(response, verb, time, pronouns):
         indice1 = 1
         
     
-    if response == verb[:-2] + conjugaisons[indice1][indice2][int(personnes.index(pronouns))]:
+    if response == verb[:-2] + csvReader.time[indice1][indice2][int(personnes.index(pronouns))]:
         
         print("✅")
         
     else:
-        print("\n❌ Answer was: ", verb[:-2] + conjugaisons[indice1][indice2][int(personnes.index(pronouns))])
+        print("\n❌ Answer was: ", verb[:-2] + csvReader.time[indice1][indice2][int(personnes.index(pronouns))])
 
 
 
@@ -64,6 +54,8 @@ def traning():
     
     print("Choose time(s) you want to revise among the following list:")
     
+    #Afficher liste verbes
+
     print("Done! You can stop at any moment the program with the keyword 'stop'")
 
     response = ""
@@ -73,7 +65,7 @@ def traning():
         time = random.choice(temp)
         pronouns = random.choice(personnes)
         
-        verb = verbChoice()
+        verb = csvReader.verbChoice()
         response = userInput(verb, time, pronouns)
         verification(response, verb, time, pronouns)
         
