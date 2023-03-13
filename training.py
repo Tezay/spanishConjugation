@@ -26,6 +26,7 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
     }
     
     correction = correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(termination)]
+    
     if response == verb[:-2] + correction:
         print("✅")
         
