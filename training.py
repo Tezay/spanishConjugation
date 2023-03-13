@@ -1,7 +1,7 @@
 import random
 import csvReader
 
-pronouns = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
+listPronouns = ["yo", "tú", "él", "nosotros", "vosotros", "ellos"]
 
 
 list = []
@@ -37,8 +37,7 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
 
         
     
-    if response == verb[:-2] + csvReader.correspondanceTime[time]()[indice1][indice2][int(personnes.index(pronouns))]:
-        
+    if response == verb[:-2] + csvReader.correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(terminaisons)]:
         print("✅")
         
     else:
