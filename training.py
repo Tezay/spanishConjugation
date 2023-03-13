@@ -57,8 +57,15 @@ def verification(response, verb, time, pronouns):
         print("\n❌ Answer was: ", verb[:-2] + conjugaisons[indice1][indice2][int(personnes.index(pronouns))])
 
 
+
+
+
 def traning():
     
+    print("Choose time(s) you want to revise among the following list:")
+    
+    print("Done! You can stop at any moment the program with the keyword 'stop'")
+
     response = ""
     
     while response != "stop" :
