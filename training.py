@@ -27,8 +27,11 @@ def verification(response, verb, time, pronouns): #time = "Conditional" (par exe
     
     correction = correspondanceTime[time]()[listPronouns.index(pronouns)][correspondanceTermination.index(termination)]
     
-    if response == verb[:-2] + correction:
+    if (response == verb[:-2] + correction and time != "Futuro" and time != "Conditional") or ((time == "Futuro" or time == "Conditional") and response == verb + correction)):
         print("✅")
+    
+    elif (time == "Futuro" or time == "Conditional") and response != verb + correction):
+        print("\n❌ Answer was: ", verb + correction)
         
     else:
         print("\n❌ Answer was: ", verb[:-2] + correction)
