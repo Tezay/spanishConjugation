@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+  <head>
+  
+    <meta charset="UTF-8">
+    <title>🇪🇸 Conjugaison Espagnol</title>
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+  
+  <body>
+  
+    <h1>Conjugaison des verbes en espagnol</h1>
+    <form action="/spanishConjugation-main/training.py" method="post">
+      <label for="verb">Verbe:</label>
+      <input type="text" id="verb" name="verb">
+      <br>
+      <label for="tense">Temps:</label>
+      <select id="tense" name="tense">
+        <option value="present">Présent</option>
+        <option value="preterite">Passé simple</option>
+        <option value="imperfect">Imparfait</option>
+        <option value="conditional">Conditionnel</option>
+        <option value="future">Futur</option>
+      </select>
+      <br>
+      <input type="button" value="Conjuguer" onclick="conjugateVerb()">
+    </form>
+    <div id="conjugation"></div>
+    
+  </body>
+  
+</html>
