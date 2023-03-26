@@ -1,13 +1,13 @@
 body {
-	background-color: #ECEFF4;
+	background-color: white;
 	font-family: Rubik, Calibri, Arial, Helvetica, sans-serif;
-	color:#3B4252;
+	color:white;
 }
 
 /**header**/
 
 header {
-	background-color: white;
+	background-image: linear-gradient(to right, #BF616A, #D08770);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -19,9 +19,6 @@ header {
 	right: 0;
   }
 
-  main {
-	margin-top: 90px; /* Marge pour pas se superposer le header */
-  }
   
   .logo {
 	display: flex;
@@ -64,6 +61,7 @@ header {
 
 h2 {
 	font-size: 26px;
+	color:#BF616A;
 }
 
 button {
@@ -73,15 +71,17 @@ button {
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
+	border:none;
     border-radius: 8px;
     background: none;
 	padding: 12px 22px;
-    color: #3B4252;
-	transition: background-color 0.1s;
+    color: white;
+	background-image: linear-gradient(to right, #BF616A, #D08770);
+	transition: background-color 0.2s;
 }
 
 button:hover {
-	background-color: #3B4252;
+	background-image: linear-gradient(to right, #c84f5b, #d76f4f);
 	color: white;
   }
 
@@ -89,30 +89,30 @@ button:hover {
 /**Times**/
 
 .times {
-	margin: 20px;
-	margin-top: 120px;
-	padding: 20px;
-	padding-right: 50px;
-	padding-top: 5px;
-	border-color: #3B4252;
-  	border-width: 3px;
-  	border-style: solid;
-	border-radius: 8px;
-	display: inline-block;
+    margin: 40px;
+    margin-top: 140px;
+    padding: 10px 40px 30px;
+    border-radius: 8px;
+    display: inline-block;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+
   .times label {
-	font-size: 22px;
+	font-size: 20px;
+	color:#713124;
   }
   
   .times input[type="checkbox"] {
-	margin-right: 10px;
-	margin-bottom: 20px;
-	transform: scale(2.5);
+	margin-right: 20px;
+	margin-bottom: 25px;
+	transform: scale(3);
   }
 
 .times button {
 	text-align: center;
+	margin-top: 10px;
 }
 
 
@@ -120,24 +120,25 @@ button:hover {
 
 .exercice {
 	margin: 20px;
-	padding: 20px;
-	padding-right: 50px;
-	padding-top: 5px;
-	border-color: #3B4252;
-  	border-width: 3px;
+	padding: 10px 30px;
+  	border-width: 0px;
   	border-style: solid;
 	border-radius: 8px;
 	display: inline-block;
+	background-color: white;
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
+
 
 input[type="text"] {
 	font-size: 18px;
 	border-radius: 8px;
 	border-width: 2px;
-	border-color: #3B4252;
+	border: none;
     background: none;
 	padding: 12px 22px;
     color: #3B4252;
+	background-color: #E5E9F0;
 	margin:20px
 	
 }
@@ -151,39 +152,22 @@ input[type="text"] {
 	display: flex;
 	align-items: center;
 	font-size: 18px;
-	color: #3B4252;
-	font-weight: bolder;
-
   }
 
-.displayPerson {
-	border: 2px solid #3B4252;
+.displayPerson, .displayVerb, .displayTime {
+	border: none;
 	border-radius: 8px;
 	margin-right: 10px;
 	padding: 0px 10px;
-	background-color: #D8DEE9;
-}
-
-.displayVerb {
-	border: 2px solid #3B4252;
-	border-radius: 8px;
-	margin-right: 10px;
-	padding: 0px 10px;
-	background-color: #D8DEE9;
-}
-
-.displayTime {
-	border: 2px solid #3B4252;
-    border-radius: 8px;
-	padding: 0px 10px;
-	background-color: #D8DEE9;
+	background-image: linear-gradient(to right, #BF616A, #D08770);
+	color: white;
 }
   
 
 /**Footer**/
 
 footer {
-	background-color: white;
+	background-color: #ECEFF4;
 	color: #4C566A;
 	position: fixed;
 	bottom: 0;
