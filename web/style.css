@@ -17,18 +17,17 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
-  }
-
+}
   
   .logo {
 	display: flex;
 	align-items: center;
-  }
+}
   
   .logo img {
 	height: 70px;
 	margin-right: 20px;
-  }
+}
   
   .logo h1 {
 	font-size: 35px;
@@ -59,6 +58,11 @@ header {
 
 /**Main**/
 
+.main {
+	display: flex;
+	align-items:first baseline;
+}
+
 h2 {
 	font-size: 26px;
 	color:#BF616A;
@@ -85,15 +89,15 @@ button:hover {
 	color: white;
   }
 
-
 /**Times**/
 
 .times {
+	float: left;
+	width: auto;
     margin-left: 40px;
     margin-top: 140px;
     padding: 10px 40px 30px;
     border-radius: 8px;
-    display: inline-block;
     background-color: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -119,9 +123,12 @@ button:hover {
 /**Exercice**/
 
 .exercice {
-	margin-left: 40px;
-	margin-top: 40px;
-	padding: 10px 30px;
+
+
+	margin:40px;
+	margin-top: 140px;
+	padding: 10px 30px 20px;
+
   	border-width: 0px;
   	border-style: solid;
 	border-radius: 8px;
@@ -165,6 +172,37 @@ input[type="text"] {
 }
   
 
+/**Infos**/
+
+.infos {
+
+	padding: 10px 30px 20px;
+  	border-width: 0px;
+  	border-style: solid;
+	border-radius: 8px;
+	display:inline-block;
+	background-color: white;
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+	color:#713124;
+	text-align: center;
+}
+
+.infos table {
+	width: 100%;
+	border-collapse: collapse;
+	border-radius: 8px;
+	margin: 0 auto;
+  }
+  
+.infos td {
+	width: 50%;
+	text-align: center;
+	border: 1px solid #D08770;
+	padding: 10px;
+  }
+
+
+
 /**Footer**/
 
 footer {
@@ -185,4 +223,5 @@ footer {
 	height: 100%;
   }
   
-	
+/**Mobile responsive**/
+
