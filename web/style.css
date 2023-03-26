@@ -126,7 +126,6 @@ button:hover {
 
 
 	margin:40px;
-	margin-top: 140px;
 	padding: 10px 30px 20px;
 
   	border-width: 0px;
@@ -143,9 +142,9 @@ input[type="text"] {
 	border-radius: 8px;
 	border-width: 2px;
 	border: none;
-    background: none;
+    	background: none;
 	padding: 12px 22px;
-    color: #3B4252;
+    	color: #3B4252;
 	background-color: #E5E9F0;
 	margin:20px
 	
