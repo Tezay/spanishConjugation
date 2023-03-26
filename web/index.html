@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Conjugaison en espagnol</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <h1>Conjugaison en espagnol</h1>
+    </div>
+    <a href="https://github.com/Tezay/spanishConjugation" target="blank" class="github-link">GitHub</a>
+  </header>
+  
+  <div class="times">
+    <form>
+      <h2>Choisir les temps à réviser :</h2>
+
+      <input type="checkbox" name="temps[]" value="futuro" id="futuro">
+      <label for="futuro">Futuro</label><br>
+
+      <input type="checkbox" name="temps[]" value="presente-indicativo" id="presente-indicativo">
+      <label for="presente-indicativo">Presente de indicativo</label><br>
+
+      <input type="checkbox" name="temps[]" value="presente-subjonctivo" id="presente-subjonctivo">
+      <label for="presente-subjonctivo">Presente de subjonctivo</label><br>
+
+      <input type="checkbox" name="temps[]" value="preterito-imperfecto-indicativo" id="preterito-imperfecto-indicativo">
+      <label for="preterito-imperfecto-indicativo">Pretérito imperfecto de indicativo</label><br>
+
+      <input type="checkbox" name="temps[]" value="preterito-indefinido" id="preterito-indefinido">
+      <label for="preterito-indefinido">Pretérito indefinido</label><br>
+
+      <input type="checkbox" name="temps[]" value="preterito-imperfecto-subjonctivo" id="preterito-imperfecto-subjonctivo">
+      <label for="preterito-imperfecto-subjonctivo">Pretérito imperfecto de subjonctivo</label><br>
+      
+      <button type="button" onclick="">Valider la séléction</button>
+    </form>
+  </div>
+
+  <div class="exercice">
+    <h2>Conjuger le verbe suivant au temps indiqué :</h2>
+    <form>
+      <input type="hidden" id="reponse-correcte">
+      <label for="reponse">
+        <div class="displayPerson">
+          <p>Person</p>
+        </div>
+        <div class="displayVerb">
+          <p>Verb</p>
+        </div>
+        <div class="displayTime">
+          <p>Time</p>
+        </div>
+      </label>
+      <input type="text" id="reponse" autocomplete="off">
+      <button type="submit">Valider</button>
+    </form>
+  </div>
+
+
+  <footer>
+    <div class="container">
+      <p>blablabla - Lycée Jules Ferry Cannes - 2023</p>
+    </div>
+  </footer>
+  
+  
+  <script src="conjugation.js"></script>
+
+</body>
+
+</html>
